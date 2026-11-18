@@ -1,0 +1,32 @@
+{
+  "name": "nepali-datepicker",
+  "version": "0.1.0",
+  "description": "Dependency-free Bikram Sambat (Nepali) datepicker and AD/BS converter",
+  "type": "module",
+  "exports": {
+    ".": "./src/datepicker.js",
+    "./bs": "./src/bs.js",
+    "./style.css": "./src/datepicker.css"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "nepali",
+    "bikram-sambat",
+    "bs",
+    "datepicker",
+    "calendar"
+  ],
+  "author": "Kamal Pandey",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndate22/datepicker.git"
+  },
+  "homepage": "https://github.com/ndate22/datepicker#readme",
+  "bugs": "https://github.com/ndate22/datepicker/issues"
+}

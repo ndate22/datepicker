@@ -1,0 +1,36 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Nepali Datepicker demo</title>
+<link rel="stylesheet" href="src/datepicker.css">
+<style>.ndp .holiday { text-decoration: underline dotted; font-weight: 700; }</style>
+<body style="font-family: system-ui; padding: 2rem">
+  <p>
+    <label>English <input id="en" placeholder="YYYY-MM-DD"></label>
+    AD: <output id="ad-out"></output>
+    <input id="ad" type="hidden">
+  </p>
+  <p>
+    <label>नेपाली <input name="dob" placeholder="मिति छान्नुहोस्" data-bs-picker data-lang="np" data-format="j M Y, l" data-weekend="6"></label>
+  </p>
+  <script type="module">
+    import { attach, attachAll } from './src/datepicker.js';
+
+    const holidays = {
+      '2080-07-26': { label: 'Laxmi Puja', className: 'holiday' },
+      '2080-07-28': { label: 'Bhai Tika', className: 'holiday' },
+    };
+
+    attach(document.getElementById('en'), {
+      weekStart: 1,
+      weekend: [0, 6],
+      min: '2080-07-10',
+      max: '2081-02-15',
+      disable: (v, { weekday }) => weekday === 6,
+      dayInfo: (v) => holidays[v],
+      adInput: document.getElementById('ad'),
+      onSelect: () => (document.getElementById('ad-out').value = document.getElementById('ad').value),
+    });
+
+    attachAll(document, { dayInfo: (v) => holidays[v] });
+  </script>
+</body>

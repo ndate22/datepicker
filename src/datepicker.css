@@ -1,0 +1,76 @@
+/*
+ * Customise by setting any --ndp-* variable on :root or .ndp, e.g.
+ *   :root { --ndp-accent: #2563eb; }
+ * The --_* names are internal: each one reads the public variable or falls back to the default.
+ */
+.ndp {
+  --_bg: var(--ndp-bg, #fff);
+  --_color: var(--ndp-color, #111);
+  --_muted: var(--ndp-muted, #666);
+  --_border: var(--ndp-border, #ddd);
+  --_hover: var(--ndp-hover, #f1f1f1);
+  --_accent: var(--ndp-accent, #dc2626);
+  --_accent-hover: var(--ndp-accent-hover, #b91c1c);
+  --_accent-text: var(--ndp-accent-text, #fff);
+  --_weekend: var(--ndp-weekend, #dc2626);
+  --_radius: var(--ndp-radius, 6px);
+  --_cell-radius: var(--ndp-cell-radius, 4px);
+
+  position: absolute;
+  z-index: var(--ndp-z-index, 1000);
+  width: var(--ndp-width, 16rem);
+  padding: 0.5rem;
+  font: var(--ndp-font, 14px/1.2 system-ui, sans-serif);
+  background: var(--_bg);
+  color: var(--_color);
+  border: 1px solid var(--_border);
+  border-radius: var(--_radius);
+  box-shadow: var(--ndp-shadow, 0 4px 16px rgb(0 0 0 / 0.12));
+}
+.ndp-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.ndp-head select {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.15rem 0.25rem;
+  border: 1px solid var(--_border);
+  border-radius: var(--_cell-radius);
+  background: var(--_bg);
+  color: inherit;
+}
+.ndp-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  text-align: center;
+}
+.ndp-wd { font-size: 0.85em; color: var(--_muted); padding: 0.25rem 0; }
+.ndp button {
+  font: inherit;
+  padding: 0.35rem 0;
+  border: 0;
+  border-radius: var(--_cell-radius);
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+.ndp button:hover:not(:disabled) { background: var(--_hover); }
+.ndp button:disabled { opacity: 0.3; cursor: default; }
+.ndp .ndp-weekend { color: var(--_weekend); }
+.ndp-foot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--_border);
+}
+.ndp .ndp-foot button { padding: 0.35rem 0.6rem; color: var(--_accent); font-weight: 600; }
+.ndp .ndp-today { outline: 1px solid var(--_accent); }
+.ndp .ndp-selected { background: var(--_accent); color: var(--_accent-text); }
+.ndp .ndp-selected:hover:not(:disabled) { background: var(--_accent-hover); }
