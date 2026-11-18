@@ -38,7 +38,7 @@ const esc = (s) => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`)
  */
 export function attach(input, options = {}) {
   const { lang = 'en', weekStart = 0, weekend = [6], min, max, disable, dayInfo, adInput, displayFormat, footer = true, onSelect } = options;
-  if (attached.has(input)) throw new Error('nepali-datepicker is already attached to this input');
+  if (attached.has(input)) throw new Error('@ndate22/datepicker is already attached to this input');
   if (!Number.isInteger(weekStart) || weekStart < 0 || weekStart > 6) throw new RangeError('weekStart must be an integer 0–6');
   const lo = min == null ? { year: BS_START_YEAR, month: 1, day: 1 } : parse(min);
   const hi = max == null ? { year: BS_END_YEAR, month: 12, day: daysInMonth(BS_END_YEAR, 12) } : parse(max);

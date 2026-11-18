@@ -1,11 +1,11 @@
-# nepali-datepicker
+# @ndate22/datepicker
 
 Dependency-free Bikram Sambat (BS) datepicker for plain `<input>` elements, plus AD ⇄ BS conversion. Supports BS 1970–2100 (AD 1913-04-13 to 2044-04-14), using the same table as [ndate22/ndate](https://github.com/ndate22/ndate).
 
 ## Install
 
 ```bash
-npm install nepali-datepicker
+npm install @ndate22/datepicker
 ```
 
 ## Datepicker
@@ -16,8 +16,8 @@ npm install nepali-datepicker
 ```
 
 ```js
-import { attach } from 'nepali-datepicker';
-import 'nepali-datepicker/style.css';
+import { attach } from '@ndate22/datepicker';
+import '@ndate22/datepicker/style.css';
 
 const picker = attach(document.getElementById('dob'), {
   lang: 'np',                              // 'en' (default) or 'np'
@@ -90,7 +90,7 @@ Escape a literal letter with `\`. With `lang: 'np'` digits are Devanagari. With 
 ```
 
 ```js
-import { attachAll } from 'nepali-datepicker';
+import { attachAll } from '@ndate22/datepicker';
 
 attachAll();                          // every input[data-bs-picker] in the document
 attachAll(container, { weekStart: 1 }); // only inside container, with defaults for missing attributes
@@ -150,7 +150,7 @@ Set any of these variables on `:root` or `.ndp`:
 ## Conversion
 
 ```js
-import { adToBs, bsToAd, daysInMonth, parse, format, toNepaliDigits } from 'nepali-datepicker';
+import { adToBs, bsToAd, daysInMonth, parse, format, toNepaliDigits } from '@ndate22/datepicker';
 
 adToBs(new Date(2023, 10, 8));   // { year: 2080, month: 7, day: 22 }
 bsToAd(2080, 7, 22);             // Date 2023-11-08T00:00:00Z

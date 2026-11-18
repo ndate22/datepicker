@@ -1,5 +1,5 @@
 {
-  "name": "nepali-datepicker",
+  "name": "@ndate22/datepicker",
   "version": "0.1.0",
   "description": "Dependency-free Bikram Sambat (Nepali) datepicker and AD/BS converter",
   "type": "module",
@@ -28,5 +28,8 @@
     "url": "git+https://github.com/ndate22/datepicker.git"
   },
   "homepage": "https://github.com/ndate22/datepicker#readme",
-  "bugs": "https://github.com/ndate22/datepicker/issues"
+  "bugs": "https://github.com/ndate22/datepicker/issues",
+  "publishConfig": {
+    "access": "public"
+  }
 }
